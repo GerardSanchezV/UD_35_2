@@ -1,0 +1,44 @@
+<h1>Formulario de contacto</h1>
+
+<div class="col-sm6">
+  <form [formGroup]="formularioContacto">
+  <div class="col-md-4">
+    <div class="form-group">
+      <label>Nombre</label>
+      <br>
+      <input type="text" class="form-control" formControlName="nombre" placeholder="Nombre y apellido" required>
+      <span class="error" *ngIf="nombre?.invalid && nombre?.touched"> Introduzca su nombre y apellido</span>
+    </div>
+  </div>
+  <br>
+  <div class="col-md-4">
+    <div class="form-group">
+      <label>Email</label>
+      <br>
+      <input type="email" class="form-control" formControlName="email" placeholder="ejemplo@dominio.es" required>
+      <span class="error" *ngIf="email?.invalid && email?.touched"> Introduzca un email válido</span>
+    </div>
+  </div>
+  <br>
+  <div class="col-md-4">
+    <div class="form-group">
+      <label>Mensaje</label>
+      <br>
+      <input type="text" class="form-control" formControlName="mensaje" required>
+      <span class="error" *ngIf="mensaje?.invalid && mensaje?.touched"> Introduzca un mensaje</span>
+    </div>
+  </div>
+  <br>
+  <div class="col-md-4">
+    <div class="form-group">
+      <label>{{valorA}} + {{valorB}} = ?</label>
+      <br>
+      <input type="text" class="form-control" formControlName="respuesta" placeholder="Respuesta" required>
+      <span class="error" *ngIf="respuesta?.invalid && respuesta?.touched"> Validación anti-spam incorrecta</span>
+    </div>
+  </div>
+  <br>
+  <button type="submit" class="btn btn-primary">Enviar</button>
+  </form>
+</div>
+<router-outlet></router-outlet>
